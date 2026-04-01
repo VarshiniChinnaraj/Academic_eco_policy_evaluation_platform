@@ -1,6 +1,6 @@
 Academic Eco Policy Evaluation Platform
 
-MERN Stack Based Web Application
+MERN Stack Based Web Application  
 
 **Project Overview**
 
