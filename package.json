@@ -1,0 +1,15 @@
+{
+  "name": "green-campus-mern",
+  "version": "1.0.0",
+  "description": "Academic Eco Policy Evaluation Platform - Full Stack MERN",
+  "scripts": {
+    "install-all": "cd server && npm install && cd ../client && npm install",
+    "seed": "cd server && npm run seed",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

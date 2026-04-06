@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap');
+
+:root {
+  --primary:        #1a7a4a;
+  --primary-light:  #22a060;
+  --primary-dark:   #125535;
+  --accent:         #f0c040;
+  --accent-hover:   #e6b020;
+  --bg-main:        #f4f9f6;
+  --bg-card:        #ffffff;
+  --text-main:      #1c2b23;
+  --text-muted:     #5a7a65;
+  --border:         #cce8d8;
+  --danger:         #dc3545;
+  --warning:        #fd7e14;
+  --info:           #0dcaf0;
+  --sidebar-width:  240px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Navbar ── */
+.gc-navbar {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+  padding: 0 1.5rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
+
+.gc-brand {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: white !important;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: -0.3px;
+}
+
+.gc-brand .leaf-icon {
+  font-size: 1.6rem;
+  filter: drop-shadow(0 0 6px rgba(240,192,64,0.6));
+}
+
+.gc-nav-link {
+  color: rgba(255,255,255,0.85) !important;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.4rem 1rem !important;
+  border-radius: 6px;
+  transition: all 0.2s;
+  text-decoration: none;
+  letter-spacing: 0.2px;
+}
+
+.gc-nav-link:hover,
+.gc-nav-link.active {
+  background: rgba(255,255,255,0.15) !important;
+  color: white !important;
+}
+
+.gc-nav-link.active {
+  background: rgba(255,255,255,0.22) !important;
+}
+
+/* ── Page Content ── */
+.gc-page {
+  padding: 2rem;
+  min-height: calc(100vh - 64px);
+}
+
+.gc-page-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--primary-dark);
+  margin-bottom: 0.2rem;
+}
+
+.gc-page-subtitle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Stat Cards ── */
+.gc-stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.4rem 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 2px 10px rgba(26,122,74,0.07);
+  transition: transform 0.2s, box-shadow 0.2s;
+  height: 100%;
+}
+
+.gc-stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(26,122,74,0.13);
+}
+
+.gc-stat-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.gc-stat-value {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--text-main);
+}
+
+.gc-stat-label {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+/* ── Chart Cards ── */
+.gc-chart-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.4rem;
+  box-shadow: 0 2px 10px rgba(26,122,74,0.06);
+  height: 100%;
+}
+
+.gc-chart-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ── Form Card ── */
+.gc-form-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 2rem;
+  box-shadow: 0 2px 10px rgba(26,122,74,0.07);
+}
+
+.gc-form-label {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--primary-dark);
+  margin-bottom: 0.4rem;
+}
+
+.gc-input {
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 0.55rem 0.85rem;
+  font-size: 0.9rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+
+.gc-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(26,122,74,0.12);
+  outline: none;
+}
+
+/* ── Buttons ── */
+.btn-gc-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.55rem 1.4rem;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.btn-gc-primary:hover {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(26,122,74,0.3);
+  color: white;
+}
+
+.btn-gc-accent {
+  background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+  border: none;
+  color: var(--primary-dark);
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.55rem 1.4rem;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.btn-gc-accent:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(240,192,64,0.35);
+  color: var(--primary-dark);
+}
+
+/* ── Table ── */
+.gc-table-wrap {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(26,122,74,0.06);
+}
+
+.gc-table {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.gc-table thead th {
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.75rem 1rem;
+  border: none;
+  white-space: nowrap;
+}
+
+.gc-table tbody tr:hover {
+  background: #f0faf4 !important;
+}
+
+.gc-table tbody td {
+  padding: 0.7rem 1rem;
+  vertical-align: middle;
+  border-color: var(--border);
+}
+
+/* ── Score Badge ── */
+.score-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.score-high   { background: #d4edda; color: #155724; }
+.score-medium { background: #fff3cd; color: #856404; }
+.score-low    { background: #f8d7da; color: #721c24; }
+
+/* ── Login Page ── */
+.gc-login-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, #2ecc71 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.gc-login-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Ccircle cx='40' cy='40' r='1.5' fill='rgba(255,255,255,0.08)'/%3E%3C/svg%3E");
+}
+
+.gc-login-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.gc-login-logo {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.gc-login-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: var(--primary-dark);
+  text-align: center;
+  line-height: 1.3;
+}
+
+.gc-login-sub {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-align: center;
+  margin-bottom: 1.8rem;
+}
+
+/* ── Block Badge ── */
+.block-badge {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.block-academic      { background: #dbeafe; color: #1d4ed8; }
+.block-laboratory    { background: #ede9fe; color: #6d28d9; }
+.block-administrative{ background: #fef3c7; color: #92400e; }
+.block-hostel        { background: #fee2e2; color: #991b1b; }
+.block-library       { background: #d1fae5; color: #065f46; }
+
+/* ── Filter row ── */
+.gc-filter-bar {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  align-items: flex-end;
+}
+
+/* ── Empty state ── */
+.gc-empty {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-muted);
+}
+
+.gc-empty-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gc-page { padding: 1rem; }
+  .gc-stat-value { font-size: 1.2rem; }
+}
